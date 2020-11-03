@@ -123,6 +123,8 @@ function pickMystery() {
   return mysteryObject;
 }
 
+const envelope = pickMystery();
+console.log(envelope)
 
 // ITERATION 3
 
@@ -131,8 +133,6 @@ function pickMystery() {
 <FIRST NAME> <LAST NAME> killed Mr. Boddy using the <WEAPON> in the <ROOM>!*/
 
 function revealMystery () {
-const envelope = pickMystery();
-console.log(envelope)
 const revelation = console.log(`${envelope.suspect[0]} ${envelope.suspect[1]} killed Mr. Boddy using the ${envelope.weapon[0]} in the ${envelope.room[0]}!`)
 return revelation
 }
