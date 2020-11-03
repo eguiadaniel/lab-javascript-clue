@@ -95,7 +95,9 @@ const weaponsArray = [
   { name: 'pistol', weight: 20 }
 ];
 
+
 // ITERATION 2
+
 function selectRandom(selectedArray) {
   if (!selectedArray.length) {
     return undefined;
@@ -106,16 +108,12 @@ function selectRandom(selectedArray) {
   return randomItem;
 }
 
-function pickMystery() {
-  function pick(selectedArray) {
-    const randomIndex = Math.floor(Math.random() * selectedArray.length);
-    let randomItem = Object.values(selectedArray[randomIndex]);
-    return randomItem;
-  }
 
-  let suspect = pick(suspectsArray);
-  let weapon = pick(weaponsArray);
-  let room = pick(roomsArray);
+function pickMystery() {
+  
+  let suspect = selectRandom(suspectsArray);
+  let weapon = selectRandom(weaponsArray);
+  let room = selectRandom(roomsArray);
 
   let mysteryObject = {
     suspect,
@@ -125,4 +123,18 @@ function pickMystery() {
   return mysteryObject;
 }
 
+
 // ITERATION 3
+
+/*Declare a function named revealMystery that receives an envelope object (such as the one returned by pickMystery) as the single argument, and returns a reveal message in the following format:
+
+<FIRST NAME> <LAST NAME> killed Mr. Boddy using the <WEAPON> in the <ROOM>!*/
+
+function revealMystery () {
+const envelope = pickMystery();
+console.log(envelope)
+const revelation = console.log(`${envelope.suspect[0]} ${envelope.suspect[1]} killed Mr. Boddy using the ${envelope.weapon[0]} in the ${envelope.room[0]}!`)
+return revelation
+}
+
+revealMystery();
